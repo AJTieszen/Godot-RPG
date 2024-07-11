@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot RPG Project"
+run/main_scene="res://GD Scenes/Test.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
