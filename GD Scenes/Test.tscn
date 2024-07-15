@@ -5,7 +5,7 @@
 [node name="Node3D" type="Node3D"]
 
 [node name="Test Model" parent="." instance=ExtResource("1_73f1w")]
-transform = Transform3D(-1, 0, -8.74228e-08, -8.12087e-08, 0.370282, 0.928919, 3.23711e-08, 0.928919, -0.370282, 0, 0, -4.83364)
+transform = Transform3D(-1, 0, -8.74228e-08, -1.11349e-10, 0.999999, 0.00127383, 8.74227e-08, 0.00127383, -0.999999, 0, 0, 0.0154095)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 7.42982)
