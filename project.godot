@@ -8,6 +8,10 @@
 
 config_version=5
 
+[addons]
+
+markdown_book/docs_folder=""
+
 [application]
 
 config/name="Godot RPG Project"
@@ -22,4 +26,4 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg")
+enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/markdown_book/plugin.cfg", "res://addons/markdownlabel/plugin.cfg")
