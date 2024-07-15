@@ -10,7 +10,7 @@ config_version=5
 
 [addons]
 
-markdown_book/docs_folder=""
+markdown_book/docs_folder="res://Docs"
 
 [application]
 
