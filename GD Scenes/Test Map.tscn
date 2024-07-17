@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4jqaxjtjbn6q"]
+[gd_scene load_steps=17 format=3 uid="uid://c4jqaxjtjbn6q"]
 
 [ext_resource type="PackedScene" uid="uid://btrl36djwfnku" path="res://GD Scenes/Player.tscn" id="1_m1msv"]
+[ext_resource type="PackedScene" uid="uid://dkm8exkm7g146" path="res://GD Scenes/Glowing Ball.tscn" id="2_rw508"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_undum"]
 sky_top_color = Color(0.132605, 0.691821, 1, 1)
@@ -64,6 +65,7 @@ environment = SubResource("Environment_7acxg")
 
 [node name="Terrain" type="CSGCombiner3D" parent="."]
 material_override = SubResource("StandardMaterial3D_3qk7s")
+gi_mode = 2
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Terrain"]
@@ -139,3 +141,6 @@ mesh = SubResource("BoxMesh_1wcwq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Glass Box/StaticBody3D"]
 shape = SubResource("BoxShape3D_tiqu6")
+
+[node name="Glowing Ball" parent="." instance=ExtResource("2_rw508")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7.21, -17)
