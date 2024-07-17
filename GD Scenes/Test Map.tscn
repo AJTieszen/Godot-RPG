@@ -33,7 +33,7 @@ material_override = SubResource("StandardMaterial3D_3qk7s")
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Terrain"]
-size = Vector3(60, 0.5, 60)
+size = Vector3(60, 1, 60)
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.15027, -10.5999, -16.6254)

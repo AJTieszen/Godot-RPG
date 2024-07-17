@@ -1,10 +1,11 @@
 extends CharacterBody3D
 
 
-const SPEED = 5
-const RUNSPEED = 15
-const JUMP_VELOCITY = 4.5
+const SPEED = 15
+const RUNSPEED = 30
+const JUMP_VELOCITY = 5.5
 const DEATHPLANE = -20
+const CSPEED = 2
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -14,8 +15,6 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-		
-		print(global_position)
 		
 		if (global_position.y < DEATHPLANE):
 			global_position = Vector3(0, 5, 0)
@@ -41,4 +40,9 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
+	#
+	var c_input_dir = Input.get_vector("c_left", "c_right", "c_up", "c_down")
+	if c_input_dir:
+		rotate_y(c_input_dir.x * delta * CSPEED * -1)
+	
 	move_and_slide()
