@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://c4jqaxjtjbn6q"]
+[gd_scene load_steps=18 format=3 uid="uid://c4jqaxjtjbn6q"]
 
 [ext_resource type="PackedScene" uid="uid://btrl36djwfnku" path="res://GD Scenes/Player.tscn" id="1_m1msv"]
 [ext_resource type="PackedScene" uid="uid://dkm8exkm7g146" path="res://GD Scenes/Glowing Ball.tscn" id="2_rw508"]
+[ext_resource type="PackedScene" uid="uid://d25rtvhhhqenv" path="res://GD Scenes/stairs_0.20m.tscn" id="3_5jmxh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_undum"]
 sky_top_color = Color(0.132605, 0.691821, 1, 1)
@@ -144,3 +145,18 @@ shape = SubResource("BoxShape3D_tiqu6")
 
 [node name="Glowing Ball" parent="." instance=ExtResource("2_rw508")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7.21, -17)
+
+[node name="Stairs 0_20m" parent="." instance=ExtResource("3_5jmxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.937, 0.40426, -13.015)
+
+[node name="Stairs 0_20m2" parent="." instance=ExtResource("3_5jmxh")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -20.8173, 0.45251, -13.2445)
+
+[node name="Stairs 0_20m3" parent="." instance=ExtResource("3_5jmxh")]
+transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 1, -17.7219, 0.437488, -13.1317)
+
+[node name="Stairs 0_20m4" parent="." instance=ExtResource("3_5jmxh")]
+transform = Transform3D(1, 0, 0, 0, 0.875, 0, 0, 0, 1, -14.7881, 0.54077, -13.2625)
+
+[node name="Stairs 0_20m5" parent="." instance=ExtResource("3_5jmxh")]
+transform = Transform3D(1, 0, 0, 0, 0.938, 0, 0, 0, 1, -11.8565, 0.496141, -13.9567)
