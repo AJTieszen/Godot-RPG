@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Player Controller.gd" id="1_vmde0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttqx4"]
-albedo_color = Color(1, 0, 0, 1)
+emission = Color(1, 0, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2lu6b"]
 
