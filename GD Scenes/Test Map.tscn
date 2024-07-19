@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4jqaxjtjbn6q"]
+[gd_scene load_steps=19 format=3 uid="uid://c4jqaxjtjbn6q"]
 
 [ext_resource type="PackedScene" uid="uid://btrl36djwfnku" path="res://GD Scenes/Player.tscn" id="1_m1msv"]
 [ext_resource type="PackedScene" uid="uid://dkm8exkm7g146" path="res://GD Scenes/Glowing Ball.tscn" id="2_rw508"]
 [ext_resource type="PackedScene" uid="uid://d25rtvhhhqenv" path="res://GD Scenes/stairs_0.20m.tscn" id="3_5jmxh"]
+[ext_resource type="Script" path="res://Scripts/Frame Counter.gd" id="4_f3guu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_undum"]
 sky_top_color = Color(0.132605, 0.691821, 1, 1)
@@ -160,3 +161,27 @@ transform = Transform3D(1, 0, 0, 0, 0.875, 0, 0, 0, 1, -14.7881, 0.54077, -13.26
 
 [node name="Stairs 0_20m5" parent="." instance=ExtResource("3_5jmxh")]
 transform = Transform3D(1, 0, 0, 0, 0.938, 0, 0, 0, 1, -11.8565, 0.496141, -13.9567)
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(150, 50)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_bottom = 50.0
+grow_horizontal = 0
+script = ExtResource("4_f3guu")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
