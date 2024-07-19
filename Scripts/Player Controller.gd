@@ -40,9 +40,13 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	#
+	# Rotate Camera
 	var c_input_dir = Input.get_vector("c_left", "c_right", "c_up", "c_down")
 	if c_input_dir:
+		var spring = $SpringArm3D
+		
 		rotate_y(c_input_dir.x * delta * CSPEED * -1)
+		spring.rotate_x(c_input_dir.y * delta * CSPEED * -1)
+		spring.rotation.x = clamp(spring.rotation.x, deg_to_rad(-50.0), deg_to_rad(10.0))
 	
 	move_and_slide()
