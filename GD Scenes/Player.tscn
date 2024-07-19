@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://btrl36djwfnku"]
+[gd_scene load_steps=6 format=3 uid="uid://btrl36djwfnku"]
 
 [ext_resource type="Script" path="res://Scripts/Player Controller.gd" id="1_vmde0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttqx4"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0.73531, 0.73531, 0, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
 emission = Color(1, 0, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2lu6b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gxrgm"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_erd33"]
 
 [node name="Player" type="Node3D"]
 
@@ -24,5 +29,10 @@ mesh = SubResource("CapsuleMesh_2lu6b")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_gxrgm")
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.940833, 0.338869, 0, -0.338869, 0.940833, 0, 1.69199, 3.97587)
+[node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("SeparationRayShape3D_erd33")
+spring_length = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0.0263114, 4.32084)
