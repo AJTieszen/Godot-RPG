@@ -8,7 +8,8 @@
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_undum"]
 sky_top_color = Color(0.132605, 0.691821, 1, 1)
 sky_horizon_color = Color(0.583151, 0.715205, 0.78325, 1)
-ground_horizon_color = Color(0.583151, 0.715205, 0.78325, 1)
+ground_bottom_color = Color(0.132605, 0.691821, 1, 1)
+ground_horizon_color = Color(0.132605, 0.691821, 1, 1)
 
 [sub_resource type="Sky" id="Sky_xlrme"]
 sky_material = SubResource("ProceduralSkyMaterial_undum")
@@ -81,6 +82,8 @@ rings = 10
 
 [node name="Node3D" parent="." instance=ExtResource("1_m1msv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.94568, 2.70915, -5.30073)
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Node3D"]
 
 [node name="Structures" type="CSGCombiner3D" parent="."]
 material_override = SubResource("StandardMaterial3D_sk6rp")

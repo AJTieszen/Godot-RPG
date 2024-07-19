@@ -22,6 +22,7 @@ physics_material_override = SubResource("PhysicsMaterial_tsrsu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 material_override = SubResource("StandardMaterial3D_im5q6")
+cast_shadow = 0
 mesh = SubResource("SphereMesh_41ykw")
 skeleton = NodePath("../..")
 
