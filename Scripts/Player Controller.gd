@@ -17,7 +17,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 		
 		if (global_position.y < DEATHPLANE):
-			get_tree().reload_current_scene()
+			get_tree().change_scene_to_file("res://GD Scenes/Title Screen.tscn")
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
