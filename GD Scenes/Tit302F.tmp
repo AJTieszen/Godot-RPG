@@ -1,75 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://ci612oibes6a"]
+[gd_scene load_steps=5 format=3 uid="uid://ci612oibes6a"]
 
 [ext_resource type="Texture2D" uid="uid://d4i5a32byx1e0" path="res://2D Graphics/Temp Title Screen.png" id="1_02r06"]
 [ext_resource type="Script" path="res://Scripts/Start Menu.gd" id="2_shbmy"]
 [ext_resource type="AudioStream" uid="uid://ckbwi2xs7qluq" path="res://Audio/Sound Effects/Test Click.wav" id="3_demdx"]
 [ext_resource type="Script" path="res://Scripts/License_Window.gd" id="4_fop6l"]
-[ext_resource type="Script" path="res://addons/markdownlabel/markdownlabel.gd" id="5_u5yar"]
-[ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h1_format.gd" id="6_chl04"]
-[ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h2_format.gd" id="7_sdsc6"]
-[ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h3_format.gd" id="8_e6ie5"]
-[ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h4_format.gd" id="9_u5xvo"]
-[ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h5_format.gd" id="10_l4or5"]
-[ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h6_format.gd" id="11_iq8y4"]
-
-[sub_resource type="Resource" id="Resource_4v1gk"]
-script = ExtResource("6_chl04")
-font_size = 2.285
-is_bold = false
-is_italic = false
-is_underlined = false
-override_font_color = false
-font_color = Color(1, 1, 1, 1)
-
-[sub_resource type="Resource" id="Resource_t5nu5"]
-resource_local_to_scene = true
-script = ExtResource("7_sdsc6")
-font_size = 1.714
-is_bold = false
-is_italic = false
-is_underlined = false
-override_font_color = false
-font_color = Color(1, 1, 1, 1)
-
-[sub_resource type="Resource" id="Resource_4sg1e"]
-resource_local_to_scene = true
-script = ExtResource("8_e6ie5")
-font_size = 1.428
-is_bold = false
-is_italic = false
-is_underlined = false
-override_font_color = false
-font_color = Color(1, 1, 1, 1)
-
-[sub_resource type="Resource" id="Resource_6amxf"]
-resource_local_to_scene = true
-script = ExtResource("9_u5xvo")
-font_size = 1.142
-is_bold = false
-is_italic = false
-is_underlined = false
-override_font_color = false
-font_color = Color(1, 1, 1, 1)
-
-[sub_resource type="Resource" id="Resource_yxrjn"]
-resource_local_to_scene = true
-script = ExtResource("10_l4or5")
-font_size = 1.0
-is_bold = false
-is_italic = false
-is_underlined = false
-override_font_color = false
-font_color = Color(1, 1, 1, 1)
-
-[sub_resource type="Resource" id="Resource_t42cg"]
-resource_local_to_scene = true
-script = ExtResource("11_iq8y4")
-font_size = 0.857
-is_bold = false
-is_italic = false
-is_underlined = false
-override_font_color = false
-font_color = Color(1, 1, 1, 1)
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -183,32 +117,38 @@ stream = ExtResource("3_demdx")
 [node name="LicenseWindow" type="Window" parent="StartScreen"]
 title = "License"
 initial_position = 2
-size = Vector2i(800, 600)
+size = Vector2i(500, 500)
 visible = false
-theme_override_constants/resize_margin = 50
 script = ExtResource("4_fop6l")
 
-[node name="MarginContainer" type="MarginContainer" parent="StartScreen/LicenseWindow"]
+[node name="ScrollContainer" type="ScrollContainer" parent="StartScreen/LicenseWindow"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
+horizontal_scroll_mode = 0
 
-[node name="MarkdownLabel" type="RichTextLabel" parent="StartScreen/LicenseWindow/MarginContainer"]
+[node name="Label" type="Label" parent="StartScreen/LicenseWindow/ScrollContainer"]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-bbcode_enabled = true
-text = "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway, because bees don't care what humans think is impossible."
-script = ExtResource("5_u5yar")
-markdown_text = "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway, because bees don't care what humans think is impossible."
-h1 = SubResource("Resource_4v1gk")
-h2 = SubResource("Resource_t5nu5")
-h3 = SubResource("Resource_4sg1e")
-h4 = SubResource("Resource_6amxf")
-h5 = SubResource("Resource_yxrjn")
-h6 = SubResource("Resource_t42cg")
-enable_checkbox_clicks = false
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Lorem ipsum odor amet, consectetuer adipiscing elit. Amet accumsan arcu tortor aliquet ligula adipiscing tincidunt tempus class! Class dui nascetur metus donec; ante neque fames at maximus. Etiam varius ex lorem pellentesque praesent. Donec consectetur scelerisque lacinia leo fringilla magnis velit phasellus. Cras volutpat sem velit tortor sem dui tristique fames. Duis est vel sem sociosqu est convallis praesent. Tristique suscipit sociosqu enim class purus volutpat dignissim.
+
+Lobortis felis pharetra hac malesuada nascetur aptent donec consectetur. Vivamus at cursus faucibus odio mi tincidunt. Vestibulum quis pharetra dolor ridiculus tincidunt id pellentesque platea nisi. Sed semper euismod porttitor suspendisse vulputate habitant fusce fusce. Faucibus vel porttitor metus potenti, lectus euismod pretium mus. Maecenas eu bibendum fusce ultrices pulvinar potenti ac. Ac ex dictum sapien pellentesque; condimentum dui feugiat diam. Libero praesent tellus imperdiet risus torquent ex ligula.
+
+Nam habitasse felis aliquam sed venenatis adipiscing per eget. Proin tempus finibus netus conubia pulvinar convallis parturient curae dictum. Ex nisl tempus dolor ridiculus enim mollis diam porttitor. Mollis ligula pretium, eros viverra feugiat bibendum. Laoreet massa netus facilisis nec rutrum sapien hendrerit ullamcorper massa. Auctor scelerisque porta eu tincidunt fusce nibh. Massa nisl justo, purus fusce dapibus sagittis suspendisse. Bibendum sem dignissim interdum senectus nam dapibus condimentum sociosqu.
+
+Vivamus suspendisse nunc urna inceptos faucibus proin mus orci. Torquent dolor felis semper justo feugiat leo sit eu. Blandit in faucibus ultrices penatibus sit inceptos massa sem praesent. Nam proin mattis quam taciti ultrices maecenas. Lacinia ante mi finibus; nisi scelerisque netus lobortis. Finibus taciti vulputate congue felis montes ex.
+
+Dictum faucibus vestibulum bibendum turpis adipiscing augue. Aquis venenatis accumsan elementum luctus nostra nisl tempor. Velit vivamus donec nibh est id metus odio elementum. Platea quisque parturient; imperdiet consectetur a vel felis mauris. Sodales nostra ultrices euismod suscipit lacinia a. Convallis pharetra nisl maximus maximus velit leo pharetra. Dis odio duis nec tellus aenean himenaeos accumsan. Posuere sagittis congue egestas accumsan porta."
+autowrap_mode = 2
+
+[node name="DummyButton" type="Button" parent="StartScreen/LicenseWindow"]
+visible = false
+offset_right = 8.0
+offset_bottom = 8.0
 
 [connection signal="close_requested" from="StartScreen/LicenseWindow" to="StartScreen/LicenseWindow" method="_on_close_requested"]
-[connection signal="visibility_changed" from="StartScreen/LicenseWindow" to="StartScreen" method="_on_license_window_visibility_changed"]
+[connection signal="visibility_changed" from="StartScreen/LicenseWindow" to="StartScreen/LicenseWindow" method="_on_visibility_changed"]

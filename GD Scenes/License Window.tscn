@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf6vy5anfqr7h"]
+
+[ext_resource type="Script" path="res://Scripts/License Window.gd" id="1_gyy45"]
+
+[node name="Window" type="Window"]
+initial_position = 2
+script = ExtResource("1_gyy45")
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

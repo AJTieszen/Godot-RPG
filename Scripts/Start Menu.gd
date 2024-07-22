@@ -3,7 +3,7 @@ extends TextureRect
 var startMenuEnabled = false
 var ftb = 0
 var fade_finished = false
-enum ACTIONS {NULL, PLAY, OPTIONS, CREDITS, QUIT}
+enum ACTIONS {NULL, PLAY, OPTIONS, CREDITS, LICENSE, QUIT}
 var action = ACTIONS.NULL
 
 var next_scene = null
@@ -22,19 +22,34 @@ func _process(delta):
 		$StartMenu/PlayButton.grab_focus()
 	
 	# Handle input
-	if($StartMenu/PlayButton.button_pressed): action = ACTIONS.PLAY
-	if($StartMenu/OptionsButton.button_pressed): action = ACTIONS.OPTIONS
-	if($StartMenu/CreditsButton.button_pressed): action = ACTIONS.CREDITS
-	if($StartMenu/QuitButton.button_pressed): action = ACTIONS.QUIT
-	if(startMenuEnabled && Input.is_action_just_pressed("start")): action = ACTIONS.PLAY
+	if($StartMenu/PlayButton.button_pressed):
+		action = ACTIONS.PLAY
+		$AudioStreamPlayer2D.play()
+	if($StartMenu/OptionsButton.button_pressed):
+		action = ACTIONS.OPTIONS
+		$AudioStreamPlayer2D.play()
+	if($StartMenu/CreditsButton.button_pressed):
+		action = ACTIONS.CREDITS
+		$AudioStreamPlayer2D.play()
+	if($StartMenu/LicenseButton.button_pressed):
+		action = ACTIONS.LICENSE
+		$AudioStreamPlayer2D.play()
+	if($StartMenu/QuitButton.button_pressed):
+		action = ACTIONS.QUIT
+		$AudioStreamPlayer2D.play()
+	if(startMenuEnabled && Input.is_action_just_pressed("start")):
+		action = ACTIONS.PLAY
+		$AudioStreamPlayer2D.play()
 	
 	# Start fade to black, preload scenes
 	if(action != ACTIONS.NULL):
-		ftb = delta
 		$StartMenu/DummyButton.grab_focus()
+		if(action == ACTIONS.PLAY): next_scene = preload("res://GD Scenes/Test Map.tscn")
+		if(action == ACTIONS.LICENSE):
+			$LicenseWindow.show()
+			action = ACTIONS.NULL
+		else: ftb = delta
 		fade_to_black(ftb)
-		
-		if (action == ACTIONS.PLAY): next_scene = preload("res://GD Scenes/Test Map.tscn")
 	
 	# Perform selected action
 	if(fade_finished):
@@ -53,3 +68,7 @@ func fade_to_black(f):
 	fade_level += f
 	$FadeRect.set_color(Color(0, 0, 0, fade_level))
 	if (fade_level >= 1): fade_finished = true
+
+
+func _on_license_window_visibility_changed():
+	if($LicenseWindow/MarginContainer.is_visible_in_tree()): $StartMenu/LicenseButton.grab_focus()

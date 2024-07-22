@@ -12,7 +12,8 @@
 [ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h5_format.gd" id="10_l4or5"]
 [ext_resource type="Script" path="res://addons/markdownlabel/header_formats/h6_format.gd" id="11_iq8y4"]
 
-[sub_resource type="Resource" id="Resource_4v1gk"]
+[sub_resource type="Resource" id="Resource_ch6l2"]
+resource_local_to_scene = true
 script = ExtResource("6_chl04")
 font_size = 2.285
 is_bold = false
@@ -183,32 +184,52 @@ stream = ExtResource("3_demdx")
 [node name="LicenseWindow" type="Window" parent="StartScreen"]
 title = "License"
 initial_position = 2
-size = Vector2i(800, 600)
+size = Vector2i(500, 500)
 visible = false
-theme_override_constants/resize_margin = 50
 script = ExtResource("4_fop6l")
 
-[node name="MarginContainer" type="MarginContainer" parent="StartScreen/LicenseWindow"]
+[node name="ScrollContainer" type="ScrollContainer" parent="StartScreen/LicenseWindow"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
+horizontal_scroll_mode = 0
 
-[node name="MarkdownLabel" type="RichTextLabel" parent="StartScreen/LicenseWindow/MarginContainer"]
+[node name="MarkdownLabel" type="RichTextLabel" parent="StartScreen/LicenseWindow/ScrollContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway, because bees don't care what humans think is impossible."
+text = "[font_size=27]Game License:[/font_size]
+
+Copyright 2024 to present Caleb Blickhahn, Josiah Blickhahn, Rebecca Blickhahn, Juan Flores, Andrew Tieszen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+The following copyrights are reserved by the organizations listed below:
+"
 script = ExtResource("5_u5yar")
-markdown_text = "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway, because bees don't care what humans think is impossible."
-h1 = SubResource("Resource_4v1gk")
+markdown_text = "## Game License:
+
+Copyright 2024 to present Caleb Blickhahn, Josiah Blickhahn, Rebecca Blickhahn, Juan Flores, Andrew Tieszen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+The following copyrights are reserved by the organizations listed below:
+"
+h1 = SubResource("Resource_ch6l2")
 h2 = SubResource("Resource_t5nu5")
 h3 = SubResource("Resource_4sg1e")
 h4 = SubResource("Resource_6amxf")
 h5 = SubResource("Resource_yxrjn")
 h6 = SubResource("Resource_t42cg")
-enable_checkbox_clicks = false
 
 [connection signal="close_requested" from="StartScreen/LicenseWindow" to="StartScreen/LicenseWindow" method="_on_close_requested"]
 [connection signal="visibility_changed" from="StartScreen/LicenseWindow" to="StartScreen" method="_on_license_window_visibility_changed"]
