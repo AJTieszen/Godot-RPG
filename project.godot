@@ -19,6 +19,10 @@ run/main_scene="res://GD Scenes/Title Screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/subwindows/embed_subwindows=false
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -26,7 +30,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg")
+enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/markdownlabel/plugin.cfg")
 
 [input]
 

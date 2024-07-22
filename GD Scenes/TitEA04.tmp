@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci612oibes6a"]
+
+[ext_resource type="Texture2D" uid="uid://d4i5a32byx1e0" path="res://2D Graphics/Temp Title Screen.png" id="1_02r06"]
+[ext_resource type="Script" path="res://Scripts/Start Menu.gd" id="2_shbmy"]
+[ext_resource type="AudioStream" uid="uid://ckbwi2xs7qluq" path="res://Audio/Sound Effects/Test Click.wav" id="3_demdx"]
+[ext_resource type="Script" path="res://Scripts/License_Window.gd" id="4_fop6l"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="StartScreen" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_02r06")
+expand_mode = 2
+stretch_mode = 5
+script = ExtResource("2_shbmy")
+
+[node name="StartMenu" type="VBoxContainer" parent="StartScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+
+[node name="PlayButton" type="Button" parent="StartScreen/StartMenu"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../OptionsButton")
+focus_next = NodePath("../OptionsButton")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+text = "Play"
+expand_icon = true
+
+[node name="HSeparator" type="HSeparator" parent="StartScreen/StartMenu"]
+layout_mode = 2
+
+[node name="OptionsButton" type="Button" parent="StartScreen/StartMenu"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+focus_next = NodePath("../CreditsButton")
+focus_previous = NodePath("../PlayButton")
+mouse_default_cursor_shape = 2
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="StartScreen/StartMenu"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../OptionsButton")
+mouse_default_cursor_shape = 2
+text = "Credits"
+
+[node name="LicenseButton" type="Button" parent="StartScreen/StartMenu"]
+layout_mode = 2
+text = "License"
+
+[node name="HSeparator2" type="HSeparator" parent="StartScreen/StartMenu"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="StartScreen/StartMenu"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../CreditsButton")
+focus_previous = NodePath("../CreditsButton")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+text = "Quit"
+
+[node name="DummyButton" type="Button" parent="StartScreen/StartMenu"]
+visible = false
+layout_mode = 2
+text = "This button should not be visible"
+
+[node name="FadeRect" type="ColorRect" parent="StartScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StartScreen"]
+stream = ExtResource("3_demdx")
+
+[node name="LicenseWindow" type="Window" parent="."]
+title = "License"
+initial_position = 2
+size = Vector2i(500, 500)
+visible = false
+script = ExtResource("4_fop6l")
+
+[connection signal="close_requested" from="LicenseWindow" to="LicenseWindow" method="_on_close_requested"]
