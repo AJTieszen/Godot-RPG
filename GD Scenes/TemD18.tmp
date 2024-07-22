@@ -56,9 +56,6 @@ theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
 text = "Play"
 expand_icon = true
 
-[node name="HSeparator" type="HSeparator" parent="StartScreen/StartMenu"]
-layout_mode = 2
-
 [node name="OptionsButton" type="Button" parent="StartScreen/StartMenu"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../PlayButton")
@@ -75,9 +72,6 @@ focus_next = NodePath("../QuitButton")
 focus_previous = NodePath("../OptionsButton")
 text = "Credits"
 
-[node name="HSeparator2" type="HSeparator" parent="StartScreen/StartMenu"]
-layout_mode = 2
-
 [node name="QuitButton" type="Button" parent="StartScreen/StartMenu"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../CreditsButton")
@@ -86,11 +80,6 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 text = "Quit"
-
-[node name="DummyButton" type="Button" parent="StartScreen/StartMenu"]
-visible = false
-layout_mode = 2
-text = "This button should not be visible"
 
 [node name="FadeRect" type="ColorRect" parent="StartScreen"]
 layout_mode = 1
