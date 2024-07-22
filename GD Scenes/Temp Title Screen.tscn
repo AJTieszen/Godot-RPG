@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d4i5a32byx1e0" path="res://2D Graphics/Temp Title Screen.png" id="1_iuuu3"]
 [ext_resource type="Script" path="res://Scripts/Start Menu.gd" id="2_tam3n"]
 
-[node name="Control" type="Control"]
+[node name="TitleScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

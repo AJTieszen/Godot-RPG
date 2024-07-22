@@ -28,7 +28,7 @@ func _process(delta):
 	
 	if(fade_finished):
 		if(action == ACTIONS.PLAY):
-			pass
+			get_tree().change_scene_to_file("res://GD Scenes/Test Map.tscn")
 		if(action == ACTIONS.OPTIONS):
 			get_tree().reload_current_scene()
 		if(action == ACTIONS.CREDITS):
