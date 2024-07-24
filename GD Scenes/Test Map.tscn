@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4jqaxjtjbn6q"]
+[gd_scene load_steps=20 format=3 uid="uid://c4jqaxjtjbn6q"]
 
 [ext_resource type="PackedScene" uid="uid://btrl36djwfnku" path="res://GD Scenes/Player.tscn" id="1_m1msv"]
 [ext_resource type="PackedScene" uid="uid://dkm8exkm7g146" path="res://GD Scenes/Glowing Ball.tscn" id="2_rw508"]
 [ext_resource type="PackedScene" uid="uid://d25rtvhhhqenv" path="res://GD Scenes/stairs_0.20m.tscn" id="3_5jmxh"]
 [ext_resource type="Script" path="res://Scripts/Frame Counter.gd" id="4_f3guu"]
+[ext_resource type="PackedScene" uid="uid://jy0k7c07bvxj" path="res://Blender Models/Export/Knight/Knight.glb" id="5_03ao6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_undum"]
 sky_top_color = Color(0.132605, 0.691821, 1, 1)
@@ -188,3 +189,6 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Knight" parent="." instance=ExtResource("5_03ao6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6214, 0.5, 10.4894)
