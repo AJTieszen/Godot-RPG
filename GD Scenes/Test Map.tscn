@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dkm8exkm7g146" path="res://GD Scenes/Glowing Ball.tscn" id="2_rw508"]
 [ext_resource type="PackedScene" uid="uid://d25rtvhhhqenv" path="res://GD Scenes/stairs_0.20m.tscn" id="3_5jmxh"]
 [ext_resource type="Script" path="res://Scripts/Frame Counter.gd" id="4_f3guu"]
-[ext_resource type="PackedScene" uid="uid://jy0k7c07bvxj" path="res://Blender Models/Export/Knight/Knight.glb" id="5_03ao6"]
+[ext_resource type="PackedScene" uid="uid://b2dh4fl6wkdq8" path="res://Blender Models/Export/Knight/Knight.glb" id="5_03ao6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_undum"]
 sky_top_color = Color(0.132605, 0.691821, 1, 1)
