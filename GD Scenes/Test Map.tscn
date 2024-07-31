@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://c4jqaxjtjbn6q"]
+[gd_scene load_steps=22 format=3 uid="uid://c4jqaxjtjbn6q"]
 
 [ext_resource type="PackedScene" uid="uid://btrl36djwfnku" path="res://GD Scenes/Player.tscn" id="1_m1msv"]
 [ext_resource type="PackedScene" uid="uid://dkm8exkm7g146" path="res://GD Scenes/Glowing Ball.tscn" id="2_rw508"]
 [ext_resource type="PackedScene" uid="uid://d25rtvhhhqenv" path="res://GD Scenes/stairs_0.20m.tscn" id="3_5jmxh"]
 [ext_resource type="Script" path="res://Scripts/Frame Counter.gd" id="4_f3guu"]
 [ext_resource type="PackedScene" uid="uid://ds54rqpq15x6w" path="res://Blender Models/Export/Knight/Knight.glb" id="6_1w1ah"]
+[ext_resource type="PackedScene" uid="uid://bmrpwbah0t572" path="res://Blender Models/Export/Healer/Healer.glb" id="7_q31xj"]
 [ext_resource type="PackedScene" uid="uid://1rjvvyjvqvax" path="res://Blender Models/Export/Huntress/Huntress.glb" id="8_fjcya"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_undum"]
@@ -196,3 +197,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.81781, 0.500001, 5.55242)
 
 [node name="Knight" parent="." instance=ExtResource("6_1w1ah")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70442, 0.5, 5.41142)
+
+[node name="Healer" parent="." instance=ExtResource("7_q31xj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4293, 0.5, 5.63646)
