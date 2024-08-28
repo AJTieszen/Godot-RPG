@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [display]
 
 window/subwindows/embed_subwindows=false
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 
