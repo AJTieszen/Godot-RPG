@@ -1,6 +1,6 @@
 extends Window
 
-var file = "res://Docs/Licenses.md"
+var file = "res://Docs/README.md"
 
 var content: String
 
