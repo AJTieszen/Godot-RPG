@@ -114,9 +114,9 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../OptionsButton")
 focus_next = NodePath("../OptionsButton")
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 1, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "Play"
 expand_icon = true
 
@@ -157,9 +157,9 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../LicenseButton")
 focus_previous = NodePath("../LicenseButton")
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "Quit"
 
 [node name="DummyButton" type="Button" parent="StartScreen/StartMenu"]
