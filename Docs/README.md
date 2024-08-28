@@ -1,7 +1,7 @@
 # Godot RPG Project:
 
 ## Controls:
-| Action | Keyboard | Gamepad (XBox Labels) |
+| Action | Keyboard | Gamepad (Xbox Labels) |
 |:------:|:--------:|:---------------------:|
 |  Walk  |   WASD   |     L Stick, D-Pad    |
 | Camera |  Arrows  |        R Stick        |

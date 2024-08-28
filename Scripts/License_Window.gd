@@ -6,10 +6,6 @@ var content: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#var file = FileAccess.open("res://Docs/Licenses.md", FileAccess.READ)
-	#content = file.get_as_text()
-	#$MarkdownLabel.markdown_text = content
-	
 	$MarginContainer/MarkdownLabel.display_file(file)
 
 

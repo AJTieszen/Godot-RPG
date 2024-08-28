@@ -3,7 +3,7 @@ extends TextureRect
 var startMenuEnabled = false
 var ftb = 0
 var fade_finished = false
-enum ACTIONS {NULL, PLAY, OPTIONS, CREDITS, LICENSE, QUIT}
+enum ACTIONS {NULL, PLAY, OPTIONS, CREDITS, LICENSE, README, QUIT}
 var action = ACTIONS.NULL
 
 var next_scene = null
@@ -34,6 +34,9 @@ func _process(delta):
 	if($StartMenu/LicenseButton.button_pressed):
 		action = ACTIONS.LICENSE
 		$AudioStreamPlayer2D.play()
+	if($StartMenu/ReadMeButton.button_pressed):
+		action = ACTIONS.README
+		$AudioStreamPlayer2D.play()
 	if($StartMenu/QuitButton.button_pressed):
 		action = ACTIONS.QUIT
 		$AudioStreamPlayer2D.play()
@@ -47,6 +50,9 @@ func _process(delta):
 		if(action == ACTIONS.PLAY): next_scene = preload("res://GD Scenes/Test Map.tscn")
 		if(action == ACTIONS.LICENSE):
 			$LicenseWindow.show()
+			action = ACTIONS.NULL
+		if(action == ACTIONS.README):
+			$ReadMeWindow.show()
 			action = ACTIONS.NULL
 		else: ftb = delta
 		fade_to_black(ftb)
