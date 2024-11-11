@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c4jqaxjtjbn6q"]
+[gd_scene load_steps=24 format=3 uid="uid://c4jqaxjtjbn6q"]
 
 [ext_resource type="PackedScene" uid="uid://btrl36djwfnku" path="res://GD Scenes/Player.tscn" id="1_m1msv"]
 [ext_resource type="PackedScene" uid="uid://dkm8exkm7g146" path="res://GD Scenes/Glowing Ball.tscn" id="2_rw508"]
@@ -32,6 +32,8 @@ glow_enabled = true
 albedo_color = Color(0, 0.533333, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sk6rp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wptum"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygpt5"]
 metallic = 1.0
@@ -109,6 +111,10 @@ size = Vector3(1, 1, 60)
 [node name="CSGBox3D4" type="CSGBox3D" parent="Structures"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, 0)
 size = Vector3(1, 1, 60)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Structures"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97407, 3.97927, 0)
+mesh = SubResource("BoxMesh_wptum")
 
 [node name="Mirrored Sphere" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 3.99739, 0.144412, 0, -0.144412, 3.99739, 0, 1.24, 0)
@@ -194,13 +200,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Huntress" parent="." instance=ExtResource("8_fjcya")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.81781, 0.500001, 5.55242)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.378, 0.500001, 14.2052)
 
 [node name="Knight" parent="." instance=ExtResource("6_1w1ah")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70442, 0.5, 5.41142)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.26459, 0.5, 14.0642)
 
 [node name="Healer" parent="." instance=ExtResource("7_q31xj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4293, 0.5, 5.63646)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9895, 0.5, 14.2893)
 
 [node name="Fire Mage" parent="." instance=ExtResource("8_c3w53")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4846, 0.5, 5.6707)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0448, 0.5, 14.3235)
