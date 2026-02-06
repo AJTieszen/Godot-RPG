@@ -12,11 +12,15 @@ config_version=5
 
 markdown_book/docs_folder="res://Docs"
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Godot RPG Project"
 run/main_scene="res://GD Scenes/Title Screen.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
