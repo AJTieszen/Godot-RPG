@@ -1,11 +1,15 @@
 extends CharacterBody3D
 
-
 const SPEED = 15
 const RUNSPEED = 30
 const JUMP_VELOCITY = 5.5
 const DEATHPLANE = -20
 const CSPEED = 2
+const ZOOM_RATE_FAR = -30
+const ZOOM_RATE_NEAR = -3
+const ZOOM_BLEND_RANGE = 40
+const HIGH_ANGLE_LIMIT = -85
+const LOW_ANGLE_LIMIT = 45
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -42,11 +46,29 @@ func _physics_process(delta):
 
 	# Rotate Camera
 	var c_input_dir = Input.get_vector("c_left", "c_right", "c_up", "c_down")
+	var length1
+	var length2
+	var length = 5.0
+	
 	if c_input_dir:
 		var spring = $SpringArm3D
+		var spr_rot_deg = rad_to_deg(spring.rotation.x)
+		var blend = (spr_rot_deg + ZOOM_BLEND_RANGE) / (ZOOM_BLEND_RANGE)
 		
+		# Rotate Camera
 		rotate_y(c_input_dir.x * delta * CSPEED * -1)
 		spring.rotate_x(c_input_dir.y * delta * CSPEED * -1)
-		spring.rotation.x = clamp(spring.rotation.x, deg_to_rad(-50.0), deg_to_rad(10.0))
+		spring.rotation.x = clamp(spring.rotation.x, deg_to_rad(HIGH_ANGLE_LIMIT), deg_to_rad(LOW_ANGLE_LIMIT))
+		
+		# Zoom Camera based on elevation
+		length1 = spring.rotation.x * ZOOM_RATE_FAR + 5.0
+		length2 = spring.rotation.x * ZOOM_RATE_NEAR + 5.0
+		
+		if(spr_rot_deg < -ZOOM_BLEND_RANGE): length = length1		# Far
+		elif (spr_rot_deg > 0): length = length2					# Near
+		else: length = lerp(length1, length2, blend)				# Blend
+			
+		spring.set_length(length)
 	
-	move_and_slide()
+	move_and_slide()  
+	
